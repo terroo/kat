@@ -9,7 +9,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Ofast")
 
 find_package(Boost REQUIRED COMPONENTS regex)
 
-add_executable(kat main.cpp kat.cpp params.cpp resources.cpp)
+add_executable(kat main.cpp kat.cpp params.cpp)
 
 target_link_libraries(kat PRIVATE Boost::regex)
 
