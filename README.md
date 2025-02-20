@@ -1,4 +1,4 @@
-# kat `command`
+# `kat` command
 > A `cat` command with **syntax highlight**.
 
 ![kat](./kat.png) 
