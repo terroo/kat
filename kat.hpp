@@ -37,6 +37,7 @@ class Kat {
   void start_end(bool);
   void display(const std::string&,int);
   void get_highlight(std::string&);
+  void check_pager();
   void help();
 
   public:

@@ -8,34 +8,7 @@ Kat::Kat(const std::string filename, const bool pager) : m_filename(filename), m
     m_filetype.erase(0, 1);
   }
   width_terminal = {40};
-
-  if(m_pager == 1){
-    COLOR_WHITE      = "";
-    COLOR_WHITE_BOLD = "";
-    COLOR_PINK       = "";
-    COLOR_RESET      = "";
-    COLOR_GREEN_HEX  = "";
-    COLOR_YELLOW_HEX = "";
-    COLOR_BLUE_LIGHT = "";
-    COLOR_GRAY_FOUR  = "";
-    COLOR_GRAY_MANY  = "";
-    COLOR_ORANGE_HEX = "";
-    COLOR_PURPLE_HEX = "";
-    COLOR_REMOVE     = "";
-  }else{
-    COLOR_WHITE      = "\033[38;2;255;255;255m";
-    COLOR_WHITE_BOLD = "\033[1;38;2;255;255;255m";
-    COLOR_PINK       = "\033[38;2;249;38;114m";
-    COLOR_RESET      = "\033[0m";
-    COLOR_GREEN_HEX  = "\033[38;2;166;226;46m";
-    COLOR_YELLOW_HEX = "\033[38;2;230;219;116m";
-    COLOR_BLUE_LIGHT = "\033[38;2;102;217;239m";
-    COLOR_GRAY_FOUR  = "\033[38;2;68;68;68m";
-    COLOR_GRAY_MANY  = "\033[38;2;117;113;94m";
-    COLOR_ORANGE_HEX = "\033[38;2;253;151;31m";
-    COLOR_PURPLE_HEX = "\033[38;2;190;132;255m";
-    COLOR_REMOVE     = "\033\\[[0-9;]*m";
-  }
+  check_pager();
 }
 
 void Kat::print_code(){
@@ -188,5 +161,35 @@ void Kat::help(){
       std::exit(1);
     }
     std::exit(0);
+  }
+}
+
+void Kat::check_pager(){
+  if(m_pager == 1){
+    COLOR_WHITE      = "";
+    COLOR_WHITE_BOLD = "";
+    COLOR_PINK       = "";
+    COLOR_RESET      = "";
+    COLOR_GREEN_HEX  = "";
+    COLOR_YELLOW_HEX = "";
+    COLOR_BLUE_LIGHT = "";
+    COLOR_GRAY_FOUR  = "";
+    COLOR_GRAY_MANY  = "";
+    COLOR_ORANGE_HEX = "";
+    COLOR_PURPLE_HEX = "";
+    COLOR_REMOVE     = "";
+  }else{
+    COLOR_WHITE      = "\033[38;2;255;255;255m";
+    COLOR_WHITE_BOLD = "\033[1;38;2;255;255;255m";
+    COLOR_PINK       = "\033[38;2;249;38;114m";
+    COLOR_RESET      = "\033[0m";
+    COLOR_GREEN_HEX  = "\033[38;2;166;226;46m";
+    COLOR_YELLOW_HEX = "\033[38;2;230;219;116m";
+    COLOR_BLUE_LIGHT = "\033[38;2;102;217;239m";
+    COLOR_GRAY_FOUR  = "\033[38;2;68;68;68m";
+    COLOR_GRAY_MANY  = "\033[38;2;117;113;94m";
+    COLOR_ORANGE_HEX = "\033[38;2;253;151;31m";
+    COLOR_PURPLE_HEX = "\033[38;2;190;132;255m";
+    COLOR_REMOVE     = "\033\\[[0-9;]*m";
   }
 }
