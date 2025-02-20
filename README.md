@@ -1,7 +1,7 @@
 # `kat` command
 > A `cat` command with **syntax highlight**.
 
-![kat](./kat.png) 
+![kat](./assets/kat.png) 
 > A `cat` command that almost tastes like **chocolate**!
 
 ---
@@ -42,6 +42,9 @@ kat Main.cs # C# file
 kat file.txt # Text file
 kat --help
 ```
+
+> Example output
+![kat command](./assets/kat-command-example.png) 
 
 ---
 
