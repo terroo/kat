@@ -13,6 +13,7 @@ class Params {
   void python();
   void javascript();
   void c_sharp();
+  void go_keys();
 
   public:
   Params(const std::string&);

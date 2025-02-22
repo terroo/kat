@@ -48,5 +48,13 @@ kat --help
 
 ---
 
-## Note
+## Suported languages
++ ✔ [C++](https://terminalroot.com/tags#cpp)
++ ✔ [C](https://terminalroot.com/tags#linguagemc)
++ ✔ [Java](https://terminalroot.com/tags#java)
++ ✔ [Python](https://terminalroot.com/tags#python)
++ ✔ [JavaScript](https://terminalroot.com/tags#javascript)
++ ✔ [C#](https://terminalroot.com/tags#csharp)
++ ✔ [Go/Golang](https://terminalroot.com/tags#go)
+> **Note**: 
 > This repository is still under development and does not yet support all languages and file types. If you want us to speed up the implementation of your language/file, please notify us in [issues](https://github.com/terroo/kat/issues)

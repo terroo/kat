@@ -12,6 +12,8 @@ Params::Params(const std::string& filetype) : m_filetype(filetype){
     python();
   }else if(m_filetype == "cs"){
     python();
+  }else if(m_filetype == "go"){
+    go_keys();
   }else{
     file_text();
   }
@@ -113,14 +115,37 @@ void Params::javascript(){
   header_and_url = "<[^>]+>";
 }
 
+// base
 void Params::c_sharp(){
   special =  { "using", "base", "explicit", "volatile", "if", "else", 
     "as", "class", "static", "using", "switch", "case", "throw", "interface",
     "catch", "try", "for", "while", "abstract"
   };
-  keywords = {"int", "char", "void", "typeof", "string", "const", "public", 
+  keywords = {"int", "char", "void", "typeof", "string", "const", "public", "var",
     "private", "protected", "float", "long", "new", "return", "short", "namespace",
     "this", "enum", "double", "do", "break", "continue", "byte", "bool", "assert"
+  };
+  comment = "//.*";
+  multicom1 = "/*";
+  multicom2 = "*/";
+  fn1 = "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(";
+  fn2 = "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(";
+  str_newline = "\\\\n";
+  literal_str = "\".*?\"";
+  args_fn = "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(?=\\,|\\))";
+  header_and_url = "<[^>]+>";
+}
+
+
+// base
+void Params::go_keys(){
+  special =  { "package", "fmt", "default", "map", "if", "else", 
+    "import", "struct", "select", "switch", "case", "interface",
+    "chan", "type", "for", "while", "var"
+  };
+  keywords = {"int", "char", "void", "printf", "string", "const", "public", 
+    "float", "return", "short", "func", "rune", "enum", "double", "do", 
+    "break", "continue", "byte", "bool", "goto"
   };
   comment = "//.*";
   multicom1 = "/*";
