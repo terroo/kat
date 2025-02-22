@@ -48,7 +48,7 @@ kat --help
 
 ---
 
-## Suported languages
+## Supported languages
 + ✔ [C++](https://terminalroot.com/tags#cpp)
 + ✔ [C](https://terminalroot.com/tags#linguagemc)
 + ✔ [Java](https://terminalroot.com/tags#java)
