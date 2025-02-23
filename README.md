@@ -56,5 +56,6 @@ kat --help
 + ✔ [JavaScript](https://terminalroot.com/tags#javascript)
 + ✔ [C#](https://terminalroot.com/tags#csharp)
 + ✔ [Go/Golang](https://terminalroot.com/tags#go)
++ ✔ [Ter/Terlang](https://github.com/terroo/terlang)
 > **Note**: 
 > This repository is still under development and does not yet support all languages and file types. If you want us to speed up the implementation of your language/file, please notify us in [issues](https://github.com/terroo/kat/issues)
