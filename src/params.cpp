@@ -14,6 +14,8 @@ Params::Params(const std::string& filetype) : m_filetype(filetype){
     python();
   }else if(m_filetype == "go"){
     go_keys();
+  }else if(m_filetype == "ter"){
+    c_cpp();
   }else{
     file_text();
   }
