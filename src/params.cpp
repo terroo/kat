@@ -16,6 +16,8 @@ Params::Params(const std::string& filetype) : m_filetype(filetype){
     go_keys();
   }else if(m_filetype == "ter"){
     c_cpp();
+  }else if(m_filetype == "sh" || m_filetype == "bash"){
+    bash();
   }else{
     file_text();
   }
@@ -150,8 +152,25 @@ void Params::go_keys(){
     "break", "continue", "byte", "bool", "goto"
   };
   comment = "//.*";
-  multicom1 = "/*";
-  multicom2 = "*/";
+  multicom1 = "#";
+  multicom2 = "$";
+  fn1 = "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(";
+  fn2 = "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(";
+  str_newline = "\\\\n";
+  literal_str = "\".*?\"";
+  args_fn = "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(?=\\,|\\))";
+  header_and_url = "<[^>]+>";
+}
+
+void Params::bash(){
+  special =  { "source", "if", "else", "elif", "fi",
+    "case", "esac", "echo", "select", "until", 
+    "for", "time", "while"
+  };
+  keywords = {"printf", "return", "do", "break", "continue", "declare", "shift", "readonly"};
+  comment = "#.*$";
+  multicom1 = "#!";
+  multicom2 = " ";
   fn1 = "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(";
   fn2 = "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(";
   str_newline = "\\\\n";

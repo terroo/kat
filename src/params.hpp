@@ -14,6 +14,7 @@ class Params {
   void javascript();
   void c_sharp();
   void go_keys();
+  void bash();
 
   public:
   Params(const std::string&);
