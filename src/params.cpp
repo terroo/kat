@@ -18,6 +18,8 @@ Params::Params(const std::string& filetype) : m_filetype(filetype){
     c_cpp();
   }else if(m_filetype == "sh" || m_filetype == "bash"){
     bash();
+  }else if(m_filetype == "swift"){
+    swift();
   }else{
     file_text();
   }
@@ -171,6 +173,26 @@ void Params::bash(){
   comment = "#.*$";
   multicom1 = "#!";
   multicom2 = " ";
+  fn1 = "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(";
+  fn2 = "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(";
+  str_newline = "\\\\n";
+  literal_str = "\".*?\"";
+  args_fn = "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(?=\\,|\\))";
+  header_and_url = "<[^>]+>";
+}
+
+void Params::swift(){
+  special =  { "class", "struct", "enum", "protocol", "if", "else", 
+    "typealias", "associatedtype", "import", "switch", "case", "let",
+    "init", "deinit", "for", "while", "var", "is", "as"
+  };
+  keywords = {"Int", "Character", "throws", "print", "String", "final", "public", 
+    "Float", "return", "async", "await", "func", "catch", "super", "Double", "do", 
+    "break", "continue", "try", "Bool", "default", "private"
+  };
+  comment = "//.*";
+  multicom1 = "#";
+  multicom2 = "$";
   fn1 = "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(";
   fn2 = "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(";
   str_newline = "\\\\n";

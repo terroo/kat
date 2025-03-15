@@ -15,6 +15,7 @@ class Params {
   void c_sharp();
   void go_keys();
   void bash();
+  void swift();
 
   public:
   Params(const std::string&);
