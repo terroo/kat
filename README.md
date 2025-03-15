@@ -58,9 +58,8 @@ kat --help
 + ✔ [Go/Golang](https://terminalroot.com/tags#go)
 + ✔ [Ter/Terlang](https://github.com/terroo/terlang)
 + ✔ [SH/Bash](https://terminalroot.com.br/tags#shell)
++ ✔ [Swift](https://terminalroot.com.br/tags#swift)
+
+
 > **Note**: 
 > This repository is still under development and does not yet support all languages and file types. If you want us to speed up the implementation of your language/file, please notify us in [issues](https://github.com/terroo/kat/issues)
-
-<!--
-+ Improve comment that has string, bash example: #gpg --yes --batch --passphrase="${PASSWORD}" -c ${2}, The literal string turns yellow.(Bash)
--->
