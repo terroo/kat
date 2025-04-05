@@ -16,6 +16,7 @@ class Params {
   void go_keys();
   void bash();
   void swift();
+  void rust();
 
   public:
   Params(const std::string&);

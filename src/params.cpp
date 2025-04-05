@@ -20,6 +20,8 @@ Params::Params(const std::string& filetype) : m_filetype(filetype){
     bash();
   }else if(m_filetype == "swift"){
     swift();
+  }else if(m_filetype == "rs"){
+    rust();
   }else{
     file_text();
   }
@@ -189,6 +191,26 @@ void Params::swift(){
   keywords = {"Int", "Character", "throws", "print", "String", "final", "public", 
     "Float", "return", "async", "await", "func", "catch", "super", "Double", "do", 
     "break", "continue", "try", "Bool", "default", "private"
+  };
+  comment = "//.*";
+  multicom1 = "#";
+  multicom2 = "$";
+  fn1 = "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(";
+  fn2 = "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(";
+  str_newline = "\\\\n";
+  literal_str = "\".*?\"";
+  args_fn = "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(?=\\,|\\))";
+  header_and_url = "<[^>]+>";
+}
+
+void Params::rust(){
+  special =  { "impl", "struct", "enum", "pub", "if", "else", 
+    "typealias", "fn", "import", "switch", "case", "let",
+    "init", "deinit", "for", "while", "var", "is", "as"
+  };
+  keywords = {"int", "char", "mut", "println", "string", "final", "public", 
+    "float", "return", "async", "await", "func", "catch", "super", "double", "do", 
+    "break", "continue", "try", "bool", "default", "private"
   };
   comment = "//.*";
   multicom1 = "#";
