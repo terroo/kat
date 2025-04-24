@@ -210,7 +210,7 @@ void Params::rust(){
   };
   keywords = {"int", "char", "mut", "println", "string", "final", "public", 
     "float", "return", "async", "await", "func", "catch", "super", "double", "do", 
-    "break", "continue", "try", "bool", "default", "private"
+    "break", "continue", "try", "bool", "default", "private", "const"
   };
   comment = "//.*";
   multicom1 = "#";
