@@ -17,6 +17,7 @@ class Params {
   void bash();
   void swift();
   void rust();
+  void my();
 
   public:
   Params(const std::string&);

@@ -22,6 +22,8 @@ Params::Params(const std::string& filetype) : m_filetype(filetype){
     swift();
   }else if(m_filetype == "rs"){
     rust();
+  }else if(m_filetype == "my"){
+    my();
   }else{
     file_text();
   }
@@ -215,6 +217,20 @@ void Params::rust(){
   comment = "//.*";
   multicom1 = "#";
   multicom2 = "$";
+  fn1 = "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(";
+  fn2 = "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(";
+  str_newline = "\\\\n";
+  literal_str = "\".*?\"";
+  args_fn = "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(?=\\,|\\))";
+  header_and_url = "<[^>]+>";
+}
+
+void Params::my(){
+  special =  {"class", "fun", "return", "if", "else", "while", "for"};
+  keywords = {"var", "print"};
+  comment = "//.*";
+  multicom1 = "@@@@";
+  multicom2 = "@@@@@";
   fn1 = "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(";
   fn2 = "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(";
   str_newline = "\\\\n";

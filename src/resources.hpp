@@ -19,6 +19,7 @@ constexpr auto unicode = [](const std::string& str){
     {"css","\uf81b"},
     {"go","\ufcd1"},
     {"ter","\ufcb5"},
+    {"my","\ufcb5"},
     {"swift","\ufbe3"},
     {"rs","\ue7a8"},
     /*{"json","\ue60b"},
