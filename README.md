@@ -21,7 +21,7 @@ sudo apt install build-essential cmake libboost-regex-dev
 
 ## Install
 ```bash
-git clone http://github.com/terroo/kat build-kat
+git clone https://github.com/terroo/kat build-kat
 cd build-kat
 cmake -B build .
 cmake --build build
